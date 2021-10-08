@@ -3,3 +3,17 @@ body {
 	background-size: 90%;
 }
 
+#container {
+	width: 89.5%;
+	margin: 0 auto;
+	display: grid;
+
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 2.08%;
+	row-gap: 20px;
+}
+
+section {
+	border: 1px solid #333;
+	min-height: 100px;
+}
