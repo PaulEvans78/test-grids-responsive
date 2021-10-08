@@ -3,17 +3,94 @@ body {
 	background-size: 90%;
 }
 
-#container {
-	width: 89.5%;
+[class*="container"] {
+    width: 89.5%;
 	margin: 0 auto;
-	display: grid;
-
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 2.08%;
-	row-gap: 20px;
+    display: grid;
 }
 
-section {
-	border: 1px solid #333;
-	min-height: 100px;
+.container {
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+
+	grid-template-areas: 
+	  "header header header header"
+	  "boxes boxes boxes boxes"
+      "content content content sidebar "
+      "footer footer footer footer";
+
+  
+	gap: 10px; 
+  }
+
+
+header {
+    border: 1px solid #333;
+	height: 200px;
+    grid-area: header;
+
+}
+
+/*section {
+    border: 1px solid #333;
+	height: 200px;
+    grid-area: boxes;
+}*/
+
+.box1 {
+    margin: 10px;
+	height: 200px;
+    border: 1px solid #333;
+}
+
+.box2 {
+    margin: 10px;
+	height: 200px;
+    border: 1px solid #333;
+}
+
+.box3 {
+    margin: 10px;
+	height: 200px;
+    border: 1px solid #333;
+}
+
+main {
+    border: 1px solid #333;
+	height: 200px;
+    grid-area: content; 
+}
+
+aside {
+    border: 1px solid #333;
+	height: 200px;
+    grid-area: sidebar;
+}
+
+footer {
+    border: 1px solid #333;
+	height: 200px;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.box4 {
+    margin: 10px;
+    border: 1px solid #333;
+}
+
+.box5 {
+    margin: 10px;
+    border: 1px solid #333;
+}
+
+.box6 {
+    margin: 10px;
+    border: 1px solid #333;
+}
+
+.box7 {
+    margin: 10px;
+    border: 1px solid #333;
 }
