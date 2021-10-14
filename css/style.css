@@ -3,14 +3,15 @@ body {
 	background-size: 90%;
 }
 
-[class*="container"] {
-    width: 89.5%;
-	margin: 0 auto;
-    display: grid;
-}
+/*[class*="container"] {
+    
+}*/
 
 /* --------------------------------- Grid Container ---------------------------------------- */
 .container {
+    width: 89.5%;
+	margin: 0 auto;
+    display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto;
 
@@ -24,6 +25,7 @@ body {
 	gap: 10px; 
   }
 
+  
   /* -------------------------------- Grid Cells ------------------------------------------ */
 
 header {
@@ -44,7 +46,7 @@ header {
 
 .box2 {
 	height: 200px;
-    width: 134%;
+    width: 138%;
     border: 1px solid #333;
 	grid-area: box2;
     justify-self: center;
@@ -97,3 +99,107 @@ footer {
     margin: 10px;
     border: 1px solid #333;
 }
+
+/* -------------------- Media Quires ------------------------------ */
+
+/* ------------------ Mindre Desktop ----------------------------- */
+
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+	    "header header header"
+	    "box1 box2 box3"
+        "content content sidebar "
+        "footer footer footer";
+    }
+
+    .box1 {
+        width: 70%;
+    }
+
+    .box2 {
+        width: 158%;
+    }
+
+    .box3 {
+        width: 70%;
+    }
+}
+
+/* ------------------ Tabletts -----------------------------*/
+
+@media screen and (min-width: 768px) and (max-width: 960px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+	    "header header header"
+	    "box1 box2 box3"
+        "content content sidebar "
+        "footer footer footer";
+    }
+
+    .box1 {
+        width: 100%;
+    }
+
+    .box2 {
+        width: 100%;
+    }
+
+    .box3 {
+        width: 100%;
+    }
+
+    footer {
+        border: 1px solid #333;
+        height: 400px;
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows:repeat(2, 1fr);
+    }
+
+}
+
+/* ------------------- Mobile Phones ------------------------- */
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+	    "header"
+	    "box1"
+        "box2"
+        "box3" 
+        "content" 
+        "sidebar"
+        "footer";
+    
+    }
+
+    .box1 {
+        width: 100%;
+        justify-self: center;
+    }
+
+    .box2 {
+        width: 100%;
+        justify-self: center;
+    }
+
+    .box3 {
+        width: 100%;
+        justify-self: center;
+    }
+
+    footer {
+        border: 1px solid #333;
+        height: 800px;
+        grid-area: footer;
+        display: grid;
+        grid-template-columns:repeat(1, 1fr);
+        grid-template-rows:repeat(4, 1fr);
+    }
+}
+
