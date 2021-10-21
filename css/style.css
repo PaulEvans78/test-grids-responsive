@@ -12,7 +12,9 @@ body {
     width: 89.5%;
 	margin: 0 auto;
     display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, 1fr); 
+    /* example repeat(12, fr)*/
+
 	grid-template-rows: auto;
 
 	grid-template-areas: 
@@ -27,6 +29,25 @@ body {
 
   
   /* -------------------------------- Grid Cells ------------------------------------------ */
+
+/*
+example-förläsning- 
+min-height parent can grow with contents
+
+header,
+section,
+main,
+aside,
+footer {
+    border: 1px solid #333;
+    min-height: 100px;
+}
+    */
+
+/*
+example-förläsning-
+used grid_column:
+*/
 
 header {
     border: 1px solid #333;
@@ -129,10 +150,12 @@ footer {
 
 /* ------------------ Tabletts -----------------------------*/
 
+/* ipad 767px */
 @media screen and (min-width: 768px) and (max-width: 960px) {
     .container {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
+        /* 12 columns */
 	    "header header header"
 	    "box1 box2 box3"
         "content content sidebar "
@@ -203,3 +226,66 @@ footer {
     }
 }
 
+/* ------------------------- FlexBox Main ------------------------------ */
+
+.main {
+    display: flex;
+    justify-content: flex-start;
+   /* flex-wrap: wrap;
+    flex-flow: row wrap; */
+    
+}
+
+.flex-items {
+    background-color: rgb(241, 225, 194);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.content1 {
+    border: 1px solid #333;
+    height: 85px;
+    width: 30%;
+}
+
+.content2 {
+    border: 1px solid #333;
+    height: 85px;
+    width: 30%;
+}
+
+.content3 {
+    border: 1px solid #333;
+    height: 85px;
+    width: 30%;
+}
+
+.content4 {
+   border: 1px solid #333;
+   height: 85px;
+   width: 30%;
+}
+
+.content5 {
+    border: 1px solid #333;
+    height: 85px;
+    width: 30%;
+}
+
+.content6 {
+    border: 1px solid #333;
+    height: 85px;
+    width: 30%;
+}
+
+
+/* ------------------------- FlexBox Aside ------------------------------ */
+
+/*.aside {
+    display: flex;
+    flex-direction: column;
+}*/
