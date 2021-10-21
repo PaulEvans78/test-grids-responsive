@@ -285,7 +285,29 @@ footer {
 
 /* ------------------------- FlexBox Aside ------------------------------ */
 
-/*.aside {
+
+.flex-items-aside {
+    background-color: rgb(241, 225, 194);
     display: flex;
     flex-direction: column;
-}*/
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.button5 {
+    width: 80%;
+    margin: 10px;
+}
+.button6 {
+    width: 80%;
+    margin: 10px;
+}
+.button7 {
+    width: 80%;
+    margin: 10px;
+}
+.button8 {
+    width: 80%;
+    margin: 10px;
+}
