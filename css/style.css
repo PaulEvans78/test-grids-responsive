@@ -12,16 +12,16 @@ body {
     width: 89.5%;
 	margin: 0 auto;
     display: grid;
-	grid-template-columns: repeat(4, 1fr); 
+	grid-template-columns: repeat(12, 1fr); 
     /* example repeat(12, fr)*/
 
 	grid-template-rows: auto;
 
 	grid-template-areas: 
-	  "header header header header"
-	  "box1 box2 box2 box3"
-      "content content content sidebar "
-      "footer footer footer footer";
+	  "header header header header header header header header header header header header"
+	  "box1 box1 box2 box2 box2 box2 box2 box2 box2 box2 box3 box3"
+      "content content content content content content content content content sidebar sidebar sidebar "
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
 
   
 	gap: 10px; 
@@ -51,7 +51,7 @@ used grid_column:
 
 header {
     border: 1px solid #333;
-	height: 200px;
+	min-height: 200px;
     grid-area: header;
 
 }
@@ -59,7 +59,7 @@ header {
  
 .box1 {
 	height: 200px;
-    width: 60%;
+    width: 95%;
 	border: 1px solid #333;
 	grid-area: box1;
     justify-self: start;
@@ -67,7 +67,7 @@ header {
 
 .box2 {
 	height: 200px;
-    width: 138%;
+    width: 100%;
     border: 1px solid #333;
 	grid-area: box2;
     justify-self: center;
@@ -75,7 +75,7 @@ header {
 
 .box3 {
 	height: 200px;
-    width: 60%;
+    width: 95%;
     border: 1px solid #333;
 	grid-area: box3;
     justify-self: end;
@@ -83,19 +83,19 @@ header {
 
 main {
     border: 1px solid #333;
-	height: 200px;
+	min-height: 200px;
     grid-area: content; 
 }
 
 aside {
     border: 1px solid #333;
-	height: 200px;
+	min-height: 200px;
     grid-area: sidebar;
 }
 
 footer {
     border: 1px solid #333;
-	height: 200px;
+	min-height: 200px;
     grid-area: footer;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -104,21 +104,25 @@ footer {
 .box4 {
     margin: 10px;
     border: 1px solid #333;
+
 }
 
 .box5 {
     margin: 10px;
     border: 1px solid #333;
+
 }
 
 .box6 {
     margin: 10px;
     border: 1px solid #333;
+
 }
 
 .box7 {
     margin: 10px;
     border: 1px solid #333;
+
 }
 
 /* -------------------- Media Quires ------------------------------ */
@@ -127,52 +131,32 @@ footer {
 
 @media screen and (min-width: 960px) and (max-width: 1200px) {
     .container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         grid-template-areas: 
-	    "header header header"
-	    "box1 box2 box3"
-        "content content sidebar "
-        "footer footer footer";
+	    "header header header header header header header header header header header header"
+	    "box1 box1 box1 box2 box2 box2 box2 box2 box2 box3 box3 box3"
+        "content content content content content content content content sidebar sidebar sidebar sidebar "
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
     }
 
-    .box1 {
-        width: 70%;
-    }
-
-    .box2 {
-        width: 158%;
-    }
-
-    .box3 {
-        width: 70%;
-    }
+   
 }
 
 /* ------------------ Tabletts -----------------------------*/
 
 /* ipad 767px */
-@media screen and (min-width: 768px) and (max-width: 960px) {
+@media screen and (min-width: 767px) and (max-width: 960px) {
     .container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         grid-template-areas: 
         /* 12 columns */
-	    "header header header"
-	    "box1 box2 box3"
-        "content content sidebar "
-        "footer footer footer";
+	    "header header header header header header header header header header header header"
+	    "box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3"
+        "content content content content content content sidebar sidebar sidebar sidebar sidebar sidebar"
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
     }
 
-    .box1 {
-        width: 100%;
-    }
-
-    .box2 {
-        width: 100%;
-    }
-
-    .box3 {
-        width: 100%;
-    }
+   
 
     footer {
         border: 1px solid #333;
@@ -187,17 +171,17 @@ footer {
 
 /* ------------------- Mobile Phones ------------------------- */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(12, 1fr);
         grid-template-areas: 
-	    "header"
-	    "box1"
-        "box2"
-        "box3" 
-        "content" 
-        "sidebar"
-        "footer";
+	    "header header header header header header header header header header header header"
+	    "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
+        "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+        "box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3" 
+        "content content content content content content content content content content content content" 
+        "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar"
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
     
     }
 
@@ -228,63 +212,81 @@ footer {
 
 /* ------------------------- FlexBox Main ------------------------------ */
 
+/* {
+    box-sizing: border-box;
+}*/
+
 .main {
     display: flex;
-    /*justify-content: flex-start;
-    align-items: stretch;*/
-    
     
 }
+
 
 .flex-items {
     background-color: rgb(247, 236, 216);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 
 .content1 {
     border: 1px solid #333;
+    margin: 10px;
     height: 85px;
     width: 250px;
+    flex-grow: 1;
 }
 
 .content2 {
     border: 1px solid #333;
+    margin: 10px;
     height: 85px;
     width: 250px;
+    flex-grow: 1;
 }
 
 .content3 {
     border: 1px solid #333;
+    margin: 10px;
     height: 85px;
     width: 250px;
+    flex-grow: 1;
 }
 
 .content4 {
    border: 1px solid #333;
+   margin: 10px;
    height: 85px;
    width: 250px;
+   flex-grow: 1;
 }
 
 .content5 {
     border: 1px solid #333;
+    margin: 10px;
     height: 85px;
     width: 250px;
+    flex-grow: 1;
 }
 
 .content6 {
     border: 1px solid #333;
+    margin: 10px;
     height: 85px;
     width: 250px;
+    flex-grow: 1;
 }
 
 
 /* ------------------------- FlexBox Aside ------------------------------ */
 
+.aside {
+    display: flex;
+    
+}
 
 .flex-items-aside {
     background-color: rgb(247, 236, 216);
